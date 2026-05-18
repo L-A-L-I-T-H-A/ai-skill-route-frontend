@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Career Guidance System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2><i class="fa-solid fa-robot"></i> AI SKILL ROUTE</h2>
+    <div>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('register')">Register</a>
+        <a onclick="showPage('login')">Login</a>
+    </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Turn skills into success</h1>
+            <p>Predict student performance, placement eligibility, career domain and skill category using Machine Learning.</p>
+            <button class="hero-btn" onclick="showPage('register')">Get Started</button>
+        </div>
+        <div class="hero-img">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Performance Prediction</h3>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Placement Analysis</h3>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Career Recommendation</h3>
+        </div>
+    </div>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="page">
+    <div class="form-box">
+        <span class="close-btn" onclick="showPage('home')"><i class="fa-solid fa-xmark"></i></span>
+        <h2>Student Registration</h2>
+        <input type="text" id="regName" placeholder="Full Name">
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
+        <button onclick="registerUser()">Register</button>
+        <div id="registerMsg" class="msg"></div>
+    </div>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="page">
+    <div class="form-box">
+        <span class="close-btn" onclick="showPage('home')"><i class="fa-solid fa-xmark"></i></span>
+        <h2>Student Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="loginUser()">Login</button>
+        <div id="loginMsg" class="msg"></div>
+    </div>
+</div>
+
+<!-- PREDICTION PAGE -->
+<div id="predict" class="page">
+    <div class="form-box">
+        <span class="close-btn" onclick="showPage('home')"><i class="fa-solid fa-arrow-left"></i></span>
+        <h2>Career Prediction Form</h2>
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="number" id="attendance" placeholder="Attendance" required>
+            <input type="number" id="coding" placeholder="Coding Score" required>
+            <input type="number" id="aptitude" placeholder="Aptitude Score" required>
+            <input type="number" id="communication" placeholder="Communication Score" required>
+            <input type="number" id="projects" placeholder="Projects Completed" required>
+            <input type="number" id="certifications" placeholder="Certifications" required>
+            <button type="submit">Predict Career</button>
+        </form>
+    </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div id="resultPage" class="page">
+    <h1 style="text-align:center; margin-bottom:30px;">Prediction Dashboard</h1>
+
+    <div class="dashboard">
+        <div class="result-card">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h3 style="color:#8b61ed ">Performance Score</h3>
+            <p id="performance"></p>
+        </div>
+
+        <div class="result-card">
+            <i class="fa-solid fa-user-check"></i>
+            <h3 style="color:#8b61ed ">Placement Eligibility</h3>
+            <p id="placement"></p>
+        </div>
+
+        <div class="result-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3 style="color:#8b61ed ;">Career Domain</h3>
+            <p id="career"></p>
+        </div>
+
+        <div class="result-card">
+            <i class="fa-solid fa-medal"></i>
+            <h3 style="color:#8b61ed ">Skill Category</h3>
+            <p id="skill"></p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
