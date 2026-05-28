@@ -37,7 +37,7 @@ document.getElementById('studentForm').addEventListener('submit',async function(
    certifications:Number(certifications.value)
  };
 
- const response=await fetch('https://ai-skill-route-2d2e56.netlify.app/student',{
+ const response=await fetch('https://ai-skill-route-backend-4.onrender.com/student',{
    method:'POST',
    headers:{'Content-Type':'application/json'},
    body:JSON.stringify(data)
