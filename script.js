@@ -37,7 +37,7 @@ document.getElementById('studentForm').addEventListener('submit',async function(
    certifications:Number(certifications.value)
  };
 
- const response=await fetch('https://ai-skill-route-backend-2.onrender.com//student',{
+ const response=await fetch('https://ai-skill-route-backend-2.onrender.com/predict',{
    method:'POST',
    headers:{'Content-Type':'application/json'},
    body:JSON.stringify(data)
